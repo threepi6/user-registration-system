@@ -27,13 +27,13 @@ def login():
         record = db1.search_login(Employee_ID = username, ID_Number = password)
         if record[6] == 'MR Management':
             win.destroy()  
-            os.system('python MRM.py')
+            os.system(f'python {pathfile}/MRM.py')
         elif record[6] == 'Inventory':
             win.destroy()  
-            os.system('python Inventory.py')
+            os.system(f'python {pathfile}/Inventory.py')
         elif record[6] == 'Boss':
             win.destroy()  
-            os.system('python Boss.py')
+            os.system(f'python {pathfile}/Boss.py')
 
 def exit():
     anser = messagebox.askquestion('Exit', 'Do you want to exit?')
@@ -59,4 +59,5 @@ but_login.place(x = 25, y = 105 )
 
 but_exit = Button(win,text = 'Exit', font = 'aryal 10 bold',width = 10, command = exit)
 but_exit.place(x = 272, y = 105 )
+
 win.mainloop()
